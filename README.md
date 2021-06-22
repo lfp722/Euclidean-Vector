@@ -4,7 +4,7 @@
 
 ## Change Log
 
-N/A
+* 23/06: Made clear that STL containers are not permitted to be used in your implementation
 
 ## The Task
 
@@ -494,6 +494,7 @@ You must:
   vectors are valid operations. In all cases the result should still be a 0-dimension vector.
 * We're asking you to implement `operator!=` because you'll see it in a lot of production codebases,
   and it's important that you know how to write it correctly.
+* You are not allowed to use STL containers as part of your implementation
 
 You must not:
 
