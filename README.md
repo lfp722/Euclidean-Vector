@@ -583,7 +583,7 @@ take effect.
 
 ## Marking Criteria
 
-This assignment will contribute 15% to your final mark.
+This assignment will contribute 25% to your final mark.
 
 The assessment for the assignment recognizes the difficulty of the task, the importance of style,
 and the importance of appropriate use of programming methods (e.g. using while loops instead of a
