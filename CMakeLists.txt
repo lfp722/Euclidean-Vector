@@ -18,11 +18,11 @@ enable_testing()
 include(CTest)
 
 # clang-tidy options
-option(${PROJECT_NAME}_ENABLE_CLANG_TIDY "Builds with clang-tidy, if available. Defaults to On." On)
+#option(${PROJECT_NAME}_ENABLE_CLANG_TIDY "Builds with clang-tidy, if available. Defaults to On." On)
 
-if(${PROJECT_NAME}_ENABLE_CLANG_TIDY)
-	find_package(ClangTidy REQUIRED)
-endif()
+#if(${PROJECT_NAME}_ENABLE_CLANG_TIDY)
+#	find_package(ClangTidy REQUIRED)
+#endif()
 
 include(add-targets)
 
