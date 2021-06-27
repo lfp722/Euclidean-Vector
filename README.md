@@ -5,6 +5,7 @@
 ## Change Log
 
 * 23/06: Made clear that STL containers are not permitted to be used in your implementation
+* 27/06: 3 new dot points added to section `9`, including: Clarifying no usage of `new` and `delete`, clarifying that generally speaking no pointer arithmetic or dereferencing should be used, and clarifying that STL algorithms are preferred over C-style for loops
 
 ## The Task
 
@@ -493,14 +494,17 @@ You must:
 * Must assume that addition, subtraction, multiplication, and division operations on two 0-dimension
   vectors are valid operations. In all cases the result should still be a 0-dimension vector.
 * We're asking you to implement `operator!=` because you'll see it in a lot of production codebases,
-  and it's important that you know how to write it correctly.
-* You are not allowed to use STL containers as part of your implementation
+  and it's important that you know how to write it correctly
+* Where possible, avoid using C-style for loops when an appropriate STL algorithm can be used on an iterator that wraps a C-style array
 
 You must not:
 
 * Write to any files that aren't provided in the repo (e.g. storing your vector data in an
   auxilliary file)
 * Add a main function `euclidean_vector.cpp`
+* Use `new` and `delete` commands explicitly to allocate or deallocate memory (we will discuss how to avoid this in the smart pointers lecture)
+* Use any STL containers as part of your implementation
+* Do any unnecessary pointer arithmetic, and use appropriate abstractions when you can. The best and simplest way to explain this is that if you're using `*` anywhere in your code besides for `*this` then you're _probably_ doing something wrong.
 
 You:
 
