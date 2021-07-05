@@ -491,7 +491,7 @@ You must:
 * Make sure that *all appropriate member functions* are `const`-qualified
 * Leave a moved-from object in a state with `0` dimensions
 * Implement this class within the **comp6771** namespace
-* Must assume that addition, subtraction, multiplication, and division operations on two 0-dimension
+* Unless otherwise specified, must assume that addition, subtraction, multiplication, and division operations on two 0-dimension
   vectors are valid operations. In all cases the result should still be a 0-dimension vector.
 * We're asking you to implement `operator!=` because you'll see it in a lot of production codebases,
   and it's important that you know how to write it correctly
