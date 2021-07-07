@@ -320,7 +320,7 @@ friend functions. Note that these friend operations don't modify any of the give
     <td>Not Equal</td>
     <td><code>bool operator!=(euclidean_vector const&, euclidean_vector const&)</code></td>
     <td>
-      True if the two vectors are not equal in the number of dimensions or the magnitude in each
+      True if the two vectors are not equal in the number of dimensions or the magnitude in any
       dimension is not equal.
     </td>
     <td><pre><code>a != b;</code></pre></td>
