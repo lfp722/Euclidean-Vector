@@ -4,12 +4,11 @@
 
 ## Change Log
 
-* 23/06: Made clear that STL containers are not permitted to be used in your implementation
-* 27/06: 3 new dot points added to section `9`, including: Clarifying no usage of `new` and `delete`, clarifying that generally speaking no pointer arithmetic or dereferencing should be used, and clarifying that STL algorithms are preferred over C-style for loops
+* 17/06: Initial release
 
 ## The Task
 
-Write a Euclidean Vector Class Library in C++, with its interface given in `include/euclidean_vector.h`
+Write a Euclidean Vector Class Library in C++, with its interface given in `include/euclidean_vector.hpp`
 and its implementation in `source/euclidean_vector.cpp`.
 
 We have outlined all key parts of this class below that should be implemented.
@@ -42,7 +41,7 @@ We have outlined all key parts of this class below that should be implemented.
     <td>Single-argument Constructor</td>
     <td><code>explicit euclidean_vector(int)</code></td>
     <td>
-      A constructor that takes the number of dimensions (as a int) but no magnitudes, sets the magnitude in each dimension as 0.0. <br>
+      A constructor that takes the number of dimensions (as an int) but no magnitudes, sets the magnitude in each dimension as 0.0. <br>
       You can assume the integer input will always be non-negative.
     </td>
     <td>
@@ -169,7 +168,6 @@ For more info look <a href="https://web.archive.org/web/20200104203134/https://w
     <td>
       Allows to get and set the value in a given dimension of the Euclidean vector. Hint: you may
       need two overloadeds to achieve this requirement.<br />
-      <b>Note: It's a requirement you use asserts to ensure the index passed is valid.</b>
     </td>
     <td>
       <pre><code>double a {b[1]};
@@ -203,7 +201,7 @@ CHECK(expected == -actual);</code></pre>
     <td>
       <b>Given</b>: <code>X = a.dimensions(), Y = b.dimensions()</code>
       <b>When</b>: <code>X != Y</code><br />
-      <b>Throw</b>: "Dimensions of LHS(X) and RHS(Y) do not match"
+      <b>Throw</b>: "Dimensions of LHS(<code>X</code>) and RHS(<code>Y</code>) do not match"
     </td>
   </tr>
   <tr>
@@ -215,7 +213,7 @@ CHECK(expected == -actual);</code></pre>
   <td>
     <b>Given</b>: <code>X = a.dimensions(), Y = b.dimensions()</code>
     <b>When</b>: <code>X != Y</code><br />
-    <b>Throw</b>: "Dimensions of LHS(X) and RHS(Y) do not match"
+      <b>Throw</b>: "Dimensions of LHS(<code>X</code>) and RHS(<code>Y</code>) do not match"
   </td>
   </tr>
   <tr>
@@ -334,7 +332,7 @@ friend functions. Note that these friend operations don't modify any of the give
     <td>
       <b>Given</b>: <code>X = b.dimensions()</code>, <code>Y = c.dimensions()</code>
       <b>When</b>: <code>X != Y</code><br />
-      <b>Throw</b>: "Dimensions of LHS(X) and RHS(Y) do not match"
+      <b>Throw</b>: "Dimensions of LHS(<code>X</code>) and RHS(<code>Y</code>) do not match"
     </td>
   </tr>
   <tr>
@@ -345,7 +343,7 @@ friend functions. Note that these friend operations don't modify any of the give
     <td>
       <b>Given</b>: <code>X = b.dimensions()</code>, <code>Y = c.dimensions()</code>
       <b>When</b>: <code>X != Y</code><br />
-      <b>Throw</b>: "Dimensions of LHS(X) and RHS(Y) do not match"
+      <b>Throw</b>: "Dimensions of LHS(<code>X</code>) and RHS(<code>Y</code>) do not match"
     </td>
   </tr>
   <tr>
@@ -441,7 +439,7 @@ friendship if you can.
     <td>
       <b>Given</b>: <code>X = a.dimensions()</code>, <code>Y = b.dimensions()</code>
       <b>When</b>: <code>X != Y</code><br />
-      <b>Throw</b>: "Dimensions of LHS(X) and RHS(Y) do not match"
+      <b>Throw</b>: "Dimensions of LHS(<code>X</code>) and RHS(<code>Y</code>) do not match"
     </td>
   </tr>
 </table>
@@ -508,7 +506,7 @@ You must not:
 
 You:
 
-* Should try to mark member functions that will not throw exceptions with `noexcept`
+* must mark member functions that will never throw exceptions with `noexcept`
 * Are not required to make any member function explicit unless directly asked to in the spec.
 
 ### 10. `const`-correctness
@@ -556,7 +554,7 @@ useful.
 If you haven't done so already, clone this repository.
 
 ```sh
-$ git clone gitlab@gitlab.cse.unsw.edu.au:COMP677/21T2/students/z5555555/ass2.git
+$ git clone gitlab@gitlab.cse.unsw.edu.au:COMP677/22T2/students/z5555555/ass2.git
 ```
 
 (Note: Replace z5555555 with your zid)
@@ -591,7 +589,7 @@ take effect.
 This assignment will contribute 25% to your final mark.
 
 The assessment for the assignment recognizes the difficulty of the task, the importance of style,
-and the importance of appropriate use of programming methods (e.g. using while loops instead of a
+and the importance of appropriate use of programming methods (e.g. using algorithms instead of a
 dozen if statements).
 
 <table class="table table-bordered table-striped">
@@ -608,7 +606,7 @@ dozen if statements).
     <td>
       <b>Your tests</b><br />
       You are required to write your own tests to ensure your program works.
-      You will write tests in the <code>test/</code> directory. At the top of each file you will also include a block comment to explain the rational and approach you took to writing tests. Please read the <a href="https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md">Catch2 tutorial</a> or review lecture/tutorial content to see how to write tests. Tests will be marked on several
+      You will write tests in the <code>test/euclidean_vector</code> directory. At the top of each file you will also include a block comment to explain the rationale and approach you took to writing tests. Please read the <a href="https://github.com/catchorg/Catch2/blob/master/docs/tutorial.md">Catch2 tutorial</a> or review lecture/tutorial content to see how to write tests. Tests will be marked on several
       factors. These include, but are not limited to:
       <ul>
         <li>Correctness — an incorrect test is worse than useless.</li>
@@ -688,8 +686,7 @@ the assignment submissions but it will remain broadly similar to the description
 
 ## Submission
 
-This assignment is due *Monday 12th of July, 19:59:59 (Week 7)*.
-Submit the assignment using the following comand while logged into the CSE machines:
+This assignment is due *Monday 11th of July, 19:59:59 (Week 7)*.
 
 Our systems automatically record the most recent push you make to your master branch. Therefore,
 to "submit" your code you simply need to make sure that your master branch (on the gitlab website)
@@ -700,11 +697,11 @@ from a fresh clone of your repository. Failure to ensure this may result in a lo
 
 ## Late Submission Policy
 
-If your assignment is submitted after this date, each hour it is late reduces the maximum mark it can achieve by 2%.
+If your assignment is submitted after this date, each hour it is late reduces the maximum mark it can achieve by 0.2% up to 120 hours late, after which it will receive 0.
 
-For example if an assignment you submitted with a raw awarded mark of 85% was submitted 5 hours late, the late submission would have no effect (as maximum mark would be 90%).
+For example if an assignment you submitted with a raw awarded mark of 90% was submitted 5 hours late, the late submission would have no effect (as maximum mark would be 99%).
 
-If the same assignment was submitted 10 hours late it would be awarded
-80%, the maximum mark it can achieve at that time.
+If the same assignment was submitted 72 hours late it would be awarded
+85%, the maximum mark it can achieve at that time.
 
 This late penalty has been amended from the original specification, and you should not assume it will be the same for future assignments.

@@ -16,7 +16,7 @@ namespace comp6771 {
 	public:
 		// TODO
 	private:
-		// ass2 spec requires we use double[]
+		// ass2 spec requires we use std::unique_ptr<double[]>
 		// NOLINTNEXTLINE(modernize-avoid-c-arrays)
 		std::unique_ptr<double[]> magnitude_;
 		// TODO more if needed
