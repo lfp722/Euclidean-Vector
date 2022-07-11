@@ -124,7 +124,7 @@ namespace comp6771 {
 	}
 
 	auto euclidean_vector::operator/=(double num) -> euclidean_vector&{
-		//check for the error
+		//check for the errors first
 		if(num == 0){
 			auto error_msg = "Invalid vector division by 0";
 			throw euclidean_vector_error(error_msg);
